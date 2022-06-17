@@ -20,7 +20,7 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show sylvie blue giggle
+    show lili feliz
 
     # These display lines of dialogue.
 
@@ -48,8 +48,7 @@ label alterarLocal:
         for q in Rooms:
             if q.unlocked:
                 TempMenu.append((q.name, q.name))
-
-    
+        TempMenu.append(("Cancelar", -1))    
     $ renpy.say(None,"Onde você gostaria de ir?", interact=False)
     $ location = renpy.display_menu(TempMenu)
     return

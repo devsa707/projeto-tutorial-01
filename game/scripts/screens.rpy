@@ -97,7 +97,7 @@ style frame:
 
 screen say(who, what):
     style_prefix "say"
-
+    use FundoImagem
     window:
         id "window"
 
