@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/scripts/script.rpy", line 38, in script
+    $ MS.cash += 1000
+  File "game/scripts/script.rpy", line 38, in <module>
+    $ MS.cash += 1000
+NameError: name 'MS' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/scripts/script.rpy", line 38, in script
+    $ MS.cash += 1000
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/script.rpy", line 38, in <module>
+    $ MS.cash += 1000
+NameError: name 'MS' is not defined
+
+Windows-10-10.0.19041
+Ren'Py 7.4.11.2266
+Projeto Teste 1.0
+Thu Jun 16 22:23:37 2022

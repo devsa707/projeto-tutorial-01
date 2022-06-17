@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/scripts/script.rpy", line 34: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
+    while Playing:
+    ^
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Thu Jun 16 22:22:19 2022
