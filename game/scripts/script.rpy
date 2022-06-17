@@ -36,5 +36,34 @@ label start:
             "Dinheiro do [MC.name]: R$[MC.cash]"
             "Adicionar Dinheiro":
                 $ MC.cash += 1000
+            "Ir para outro lugar":
+                call alterarLocal    
+            "Comprar":
+                call comprarLocais
+    return
 
+label alterarLocal:
+    python:
+        TempMenu = []
+        for q in Rooms:
+            if q.unlocked:
+                TempMenu.append((q.name, q.name))
+
+    
+    $ renpy.say(None,"Onde você gostaria de ir?", interact=False)
+    $ location = renpy.display_menu(TempMenu)
+    return
+
+label comprarLocais:
+    python:
+        TempMenu = []
+        for i, q in enumerate(Rooms):
+            if (MC.cash >= q.cost) and (not q.unlocked):
+                TempMenu.append((q.name, i))
+        TempMenu.append(("Cancelar", -1))
+    $ renpy.say(None,"Qual local você gostaria de comprar?", interact=False)
+    $ builder = renpy.display_menu(TempMenu)
+    if not builder == -1:
+        $ Rooms[builder].unlocked = True
+        $ MC.cash -= Rooms[builder].cost
     return
