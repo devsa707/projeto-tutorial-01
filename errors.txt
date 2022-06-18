@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/initialise/functions.rpy", line 7: invalid syntax
-        ImagemFundo = "places/"ImagemFundo + ".jpg"
-                                          ^
-    
+File "game/scripts/screens/buildUI.rpy", line 10: for expects a non-empty block.
+    for q in Rooms:
+                   ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Jun 16 23:27:44 2022
+Fri Jun 17 22:01:34 2022

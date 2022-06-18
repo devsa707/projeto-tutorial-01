@@ -1,43 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'places/quarto.jpg'>:
-  File "game/scripts/script.rpy", line 27, in script
-    l "Bom, acho que chegou a hora de começar a aprender não?."
-  File "game/scripts/script.rpy", line 27, in script
-    l "Bom, acho que chegou a hora de começar a aprender não?."
-  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
-    _window_show(auto=True)
-  File "renpy/common/000window.rpy", line 69, in _window_show
-    renpy.with_statement(trans)
-IOError: Couldn't find file 'places/quarto.jpg'.
+While loading <'Image' u'places/banheira.png'>:
+  File "game/scripts/script.rpy", line 34, in script
+    $ UIreturn = renpy.call_screen("mainUI")
+  File "game/scripts/script.rpy", line 34, in <module>
+    $ UIreturn = renpy.call_screen("mainUI")
+IOError: Couldn't find file 'places/banheira.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 331, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 662, in main
-    run(restart)
-  File "renpy/main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "renpy/execution.py", line 922, in run_context
-    context.run()
-  File "game/scripts/script.rpy", line 27, in script
-    l "Bom, acho que chegou a hora de começar a aprender não?."
-  File "game/scripts/script.rpy", line 27, in script
-    l "Bom, acho que chegou a hora de começar a aprender não?."
-  File "renpy/ast.py", line 689, in execute
-    statement_name(stmt_name)
-  File "renpy/ast.py", line 46, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
-    _window_show(auto=True)
-  File "renpy/common/000window.rpy", line 69, in _window_show
-    renpy.with_statement(trans)
-  File "renpy/exports.py", line 1684, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "renpy/display/core.py", line 2762, in do_with
-    clear=clear)
+  File "game/scripts/script.rpy", line 34, in script
+    $ UIreturn = renpy.call_screen("mainUI")
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/script.rpy", line 34, in <module>
+    $ UIreturn = renpy.call_screen("mainUI")
+  File "renpy/exports.py", line 3136, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "renpy/display/core.py", line 3325, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
   File "renpy/display/core.py", line 3839, in interact_core
@@ -48,10 +32,6 @@ Full traceback:
   File "render.pyx", line 263, in renpy.display.render.render
   File "renpy/display/layout.py", line 826, in render
     surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/transition.py", line 368, in render
-    top = render(self.new_widget, width, height, st, at)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
   File "renpy/display/layout.py", line 826, in render
@@ -76,9 +56,9 @@ Full traceback:
     surf = image.load()
   File "renpy/display/im.py", line 706, in load
     raise e
-IOError: Couldn't find file 'places/quarto.jpg'.
+IOError: Couldn't find file 'places/banheira.png'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 Projeto Teste 1.0
-Thu Jun 16 23:38:56 2022
+Fri Jun 17 22:03:41 2022

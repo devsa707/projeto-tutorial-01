@@ -27,19 +27,21 @@ label start:
     l "Bom, acho que chegou a hora de começar a aprender não?."
 
     l "Mesmo que leve alguns anos, um dia espero que façamos um jogo e que ele seja incrível!"
-
-    l "Bom Dia, [MC.name], vamos para o [location]"
     
     $ Playing = True
     while Playing:
-        menu:
-            "Dinheiro do [MC.name]: R$[MC.cash]"
-            "Adicionar Dinheiro":
-                $ MC.cash += 1000
-            "Ir para outro lugar":
-                call alterarLocal    
-            "Comprar":
-                call comprarLocais
+        $ clickType = ""
+        $ UIreturn = renpy.call_screen("mainUI")
+
+        if clickType == "move":
+            $ location = UIreturn
+
+        if clickType == "cheat":
+            $ MC.cash += UIreturn
+        
+        if clickType == "Construir":
+            $ Rooms[UIreturn].unlocked = True
+            $ MC.cash -= Rooms[UIreturn].cost
     return
 
 label alterarLocal:
@@ -50,7 +52,9 @@ label alterarLocal:
                 TempMenu.append((q.name, q.name))
         TempMenu.append(("Cancelar", -1))    
     $ renpy.say(None,"Onde você gostaria de ir?", interact=False)
-    $ location = renpy.display_menu(TempMenu)
+    $ mover = renpy.display_menu(TempMenu)
+    if not mover == -1:
+        $ location = mover
     return
 
 label comprarLocais:
