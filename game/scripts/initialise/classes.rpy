@@ -28,3 +28,41 @@ init python:
     Rooms.append(place("Piscina",25000,False))
 
     location = Rooms[1].name
+
+    class NPerson(object):
+        def __init__(self, forename, surname, location, love):
+            self.forename = forename
+            self.surname = surname
+            self.location = location
+            self.love = love
+        
+        @property
+        def name(self):
+            return "{} {}".format(self.forename, self.surname)
+    
+    Npc = []
+    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
+    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
+    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
+    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
+    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
+    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
+    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
+
+    class DIALOGUE(object):
+        def __init__(self, location, participant, chain, sequence):
+            self.location = location
+            self.participant = participant
+            self.chain = chain
+            self.sequence = sequence
+        
+        @property
+        def check():
+            global location
+            global Npc
+            for q in Npc:
+                if q.name = self.forename:
+                    if q.location = location:
+                        Return True
+            Return False
+                    
