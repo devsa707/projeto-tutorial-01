@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/screens/buildUI.rpy", line 10: for expects a non-empty block.
-    for q in Rooms:
-                   ^
+File "game/scripts/screens/topbar.rpy", line 8: expected a keyword argument or end of line.
+    hovered xpos 10
+                 ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri Jun 17 22:01:34 2022
+Sat Jun 25 18:38:02 2022

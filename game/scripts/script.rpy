@@ -42,6 +42,9 @@ label start:
         if clickType == "Construir":
             $ Rooms[UIreturn].unlocked = True
             $ MC.cash -= Rooms[UIreturn].cost
+
+        if clickType == "mapOpen":
+            call mapNav
     return
 
 label alterarLocal:

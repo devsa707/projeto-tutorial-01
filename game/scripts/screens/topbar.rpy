@@ -1,4 +1,11 @@
 screen topBar():
+    imagebutton:
+        xpos 25
+        ypos 100
+        hover "/ui/map/mapa_icone.png"
+        idle "/ui/map/mapa_icone.png"
+        action SetVariable("clickType", "mapOpen"), Return(None)
+
     frame:
         xpos 0
         ypos 0
