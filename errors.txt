@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/scripts/screens/topbar.rpy", line 8: expected a keyword argument or end of line.
-    hovered xpos 10
-                 ^
+File "game/scripts/initialise/classes.rpy", line 67: invalid syntax
+                        Return True
+                                   ^
+    
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sat Jun 25 18:38:02 2022
+Sun Jun 26 11:12:25 2022

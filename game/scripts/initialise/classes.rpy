@@ -50,19 +50,39 @@ init python:
     Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
 
     class DIALOGUE(object):
-        def __init__(self, location, participant, chain, sequence):
+        def __init__(self, location, participant, chain, sequence, lbl):
             self.location = location
             self.participant = participant
             self.chain = chain
             self.sequence = sequence
+            self.lbl = lbl
         
         @property
         def check():
             global location
             global Npc
             for q in Npc:
-                if q.name = self.forename:
-                    if q.location = location:
-                        Return True
-            Return False
+                if q.name == self.forename or self.forename == "":
+                    if q.location == location == location:
+                        return True
+            return False
                     
+    Dialogue = []
+    
+    Dialogue.append(DIALOGUE("","",0,0,"chain_0_0"))
+    Dialogue.append(DIALOGUE("Cozinha","Danielle",0,1,"chain_0_1"))
+    Dialogue.append(DIALOGUE("Quarto","",0,2,"chain_0_2"))
+    
+    class CHAIN(object):
+        def __init__(self, evnt, sequence, isActive):
+            self.evnt = evnt
+            self.sequence = sequence
+            self.isActive = isActive
+
+    Chain = []
+    for t in range(0,9):
+        Chain.append(CHAIN([],0,False))
+    
+    for i,q in enumerate(Dialogue):
+        tempInt = q.chain
+        Chain[tempInt].evnt.append(i)
