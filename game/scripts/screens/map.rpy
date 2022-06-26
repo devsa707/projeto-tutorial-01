@@ -2,7 +2,7 @@ screen map():
     add "/ui/map/mapbg.jpg"
     imagebutton:
         xpos 10
-        ypos 50
+        ypos 10
         focus_mask True
         hover "/ui/map/mapa_icone.png"
         idle "/ui/map/mapa_icone.png"
@@ -10,7 +10,7 @@ screen map():
 
     for q in Rooms:
         if q.unlocked:
-            $ TempName = "/ui/map/mapa_" + q.name + ".png"
+            $ TempName = "/ui/map/mapa_" + q.local + ".png"
             imagebutton:
                 idle TempName
                 hover TempName

@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/initialise/classes.rpy", line 67: invalid syntax
-                        Return True
-                                   ^
-    
+File "game/scripts/screens/map.rpy", line 6: u'map' is not a keyword argument or valid child for the screen statement.
+    map.xpos = posx
+       ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sun Jun 26 11:12:25 2022
+Sun Jun 26 12:21:08 2022

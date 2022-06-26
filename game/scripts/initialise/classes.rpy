@@ -4,6 +4,12 @@ init python:
             self.name = name
             self.cost = cost
             self.unlocked = unlocked
+        
+        @property
+        def local(self):
+            llocal = self.name.lower()
+            llocal = llocal.replace(" ", "_")
+            return llocal
     
     class person(object):
         def __init__(self,name,weight,cash):
@@ -39,15 +45,26 @@ init python:
         @property
         def name(self):
             return "{} {}".format(self.forename, self.surname)
+
+        @property
+        def avatar(self):
+            mood = "_neutro.png"
+            if -10 < self.love < 10:
+                mood = "_neutro.png"
+            elif self.love <= -10:
+                mood = "_surpresa.png"
+            elif self.love >= 10:
+                mood = "_feliz.png"
+            return "ui/avatars/" + self.forename + "/" + self.forename + mood
     
     Npc = []
-    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
-    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
-    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
-    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
-    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
-    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
-    Npc.append(NPerson("Danielle","Smith", "Cozinha", 0))
+    Npc.append(NPerson("Lili","Navarro", "Cozinha", 0))
+    Npc.append(NPerson("Lili","Navarro", "Quarto", 0))
+    Npc.append(NPerson("Lili","Navarro", "Sala de Estar", 0))
+    Npc.append(NPerson("Lili","Navarro", "Cozinha", 0))
+    Npc.append(NPerson("Lili","Navarro", "Cozinha", 0))
+    Npc.append(NPerson("Lili","Navarro", "Cozinha", 0))
+    Npc.append(NPerson("Lili","Navarro", "Cozinha", 0))
 
     class DIALOGUE(object):
         def __init__(self, location, participant, chain, sequence, lbl):
@@ -62,7 +79,7 @@ init python:
             global location
             global Npc
             for q in Npc:
-                if q.name == self.forename or self.forename == "":
+                if q.forename == self.forename or self.forename == "":
                     if q.location == location == location:
                         return True
             return False
