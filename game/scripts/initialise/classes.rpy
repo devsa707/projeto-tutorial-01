@@ -103,3 +103,14 @@ init python:
     for i,q in enumerate(Dialogue):
         tempInt = q.chain
         Chain[tempInt].evnt.append(i)
+
+    class CLICKY(object):
+        def __init__(self,location, isActive, icon, func):
+            self.location = location
+            self.isActive = isActive
+            self.icon = icon
+            self.func = func
+    
+    Objects = []
+
+    Objects.append(CLICKY("Quarto", True, "ui/items/livro_mesa.png", "livro_mesa"))

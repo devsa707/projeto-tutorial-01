@@ -10,7 +10,7 @@ screen topBar():
         xpos 0
         ypos 0
         xsize 1280
-        ysize 75
+        ysize 40
         hbox:
             xsize 1280            
             text location

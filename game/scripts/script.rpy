@@ -35,6 +35,10 @@ label start:
 
         if clickType == "mapOpen":
             call mapNav
+
+        if clickType == "Clicky":
+            call expression UIreturn
+            
     return
 
 label alterarLocal:
