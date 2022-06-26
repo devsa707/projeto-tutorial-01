@@ -4,4 +4,4 @@ init python:
         global ImagemFundo
         ImagemFundo = location.lower()
         ImagemFundo = ImagemFundo.replace(" ", "_")
-        ImagemFundo = "places/" + ImagemFundo + ".png"
+        ImagemFundo = "images/places/" + ImagemFundo + ".png"
