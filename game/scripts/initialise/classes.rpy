@@ -67,34 +67,37 @@ init python:
     Npc.append(NPerson("Lili","Navarro", "Cozinha", 0))
 
     class DIALOGUE(object):
-        def __init__(self, location, participant, chain, sequence, lbl):
+        def __init__(self, location, participant, chain, sequence, lbl, initText):
             self.location = location
             self.participant = participant
             self.chain = chain
             self.sequence = sequence
             self.lbl = lbl
+            self.initText = initText
         
         @property
-        def check():
+        def check(self):
             global location
-            global Npc
-            for q in Npc:
-                if q.forename == self.forename or self.forename == "":
-                    if q.location == location == location:
+            if self.participant == '':
+                if self.location == location or self.location == "":
+                    if self.sequence == Chain[self.chain].sequence or self.chain == -1:
                         return True
             return False
                     
     Dialogue = []
     
-    Dialogue.append(DIALOGUE("","",0,0,"chain_0_0"))
-    Dialogue.append(DIALOGUE("Cozinha","Danielle",0,1,"chain_0_1"))
-    Dialogue.append(DIALOGUE("Quarto","",0,2,"chain_0_2"))
+    Dialogue.append(DIALOGUE("Quarto","Lili",0,0,"chain_0_1","Olá novamente"))
+    Dialogue.append(DIALOGUE("Quarto","Lili",0,1,"chain_0_1", "sério, de novo?"))
+    Dialogue.append(DIALOGUE("Quarto","Lili",0,2,"chain_0_2", "SAI MALUCO TODO DIA ISSO"))
     
     class CHAIN(object):
         def __init__(self, evnt, sequence, isActive):
             self.evnt = evnt
             self.sequence = sequence
             self.isActive = isActive
+    
+        def next(self):
+            self.sequence += 1
 
     Chain = []
     for t in range(0,9):

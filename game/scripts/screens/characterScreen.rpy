@@ -8,5 +8,5 @@ screen Character_Screen():
                 xpos Char_X
                 yalign 1.0
                 focus_mask True
-                action NullAction()
+                action SetVariable("clickType","CharacterClick"), Return(q.forename)
             $ Char_X -= 200

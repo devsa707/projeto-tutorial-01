@@ -3,23 +3,16 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-# The game starts here.
 
-    # This ends the game.
-label start:
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    # These display lines of dialogue.
-    
+label start:    
     $ Playing = True
     while Playing:
+        window hide
+        $ DialogueTriggerCheck
+        while len (LabelsToCall) > 0:
+            if renpy.has_label(LabelsToCall[0]):
+                call expression LavelsToCall.pop(0)
+
         $ clickType = ""
         $ UIreturn = renpy.call_screen("mainUI")
 
@@ -38,7 +31,13 @@ label start:
 
         if clickType == "Clicky":
             call expression UIreturn
-            
+
+        if clickType == "CharacterClick":
+            $ CharacterClick(location)
+            if ChoiceList <> []:
+                $ LabelToCall = renpy.display_menu(ChoiceList, interact = True, screen = "choice")
+                call expression LabelToCall
+
     return
 
 label alterarLocal:

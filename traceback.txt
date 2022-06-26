@@ -1,26 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/script.rpy", line 40, in script call
-    call UIreturn
-  File "game/scripts/script.rpy", line 40, in script call
-    call UIreturn
-ScriptError: could not find label 'UIreturn'.
+  File "game/scripts/script.rpy", line 34, in script call
+    call expression LabelToCall
+  File "game/scripts/chain_0/0.rpy", line 8, in script
+    $ Chain[0].next()
+  File "game/scripts/chain_0/0.rpy", line 8, in <module>
+    $ Chain[0].next()
+TypeError: next() takes no arguments (1 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/script.rpy", line 40, in script call
-    call UIreturn
-  File "renpy/ast.py", line 1490, in execute
-    rv = renpy.game.context().call(label, return_site=self.next.name)
-  File "game/scripts/script.rpy", line 40, in script call
-    call UIreturn
-  File "renpy/script.py", line 918, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'UIreturn'.
+  File "game/scripts/script.rpy", line 34, in script call
+    call expression LabelToCall
+  File "game/scripts/chain_0/0.rpy", line 8, in script
+    $ Chain[0].next()
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/chain_0/0.rpy", line 8, in <module>
+    $ Chain[0].next()
+TypeError: next() takes no arguments (1 given)
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 Projeto Teste 1.0
-Sun Jun 26 13:45:57 2022
+Sun Jun 26 15:02:21 2022
